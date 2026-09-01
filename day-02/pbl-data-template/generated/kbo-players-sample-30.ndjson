@@ -1,0 +1,60 @@
+{"index":{"_index":"kbo-players","_id":"PLAYER-00001"}}
+{"P_ID":"PLAYER-00001","surname":"박","P_NM":"박선수1","TEAM_NM":"두산","P_TYPE":"hitter","POSITION":"내야수","STATUS":"현역","SEASON":2004,"G":43,"AVG":0.272,"HR":44,"RBI":106,"SB":41,"OPS":0.83,"ERA":3.89,"W":20,"SV":26,"SO":18,"WHIP":1.23,"profile":"두산 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00002"}}
+{"P_ID":"PLAYER-00002","surname":"윤","P_NM":"윤선수2","TEAM_NM":"삼성","P_TYPE":"hitter","POSITION":"내야수","STATUS":"현역","SEASON":2016,"G":45,"AVG":0.332,"HR":46,"RBI":105,"SB":15,"OPS":0.928,"ERA":1.59,"W":18,"SV":40,"SO":37,"WHIP":1.27,"profile":"삼성 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00003"}}
+{"P_ID":"PLAYER-00003","surname":"이","P_NM":"이선수3","TEAM_NM":"삼성","P_TYPE":"hitter","POSITION":"포수","STATUS":"현역","SEASON":2022,"G":9,"AVG":0.377,"HR":41,"RBI":125,"SB":60,"OPS":0.716,"ERA":2.06,"W":12,"SV":29,"SO":168,"WHIP":0.95,"profile":"삼성 소속 포수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00004"}}
+{"P_ID":"PLAYER-00004","surname":"김","P_NM":"김선수4","TEAM_NM":"KT","P_TYPE":"hitter","POSITION":"내야수","STATUS":"은퇴","SEASON":2008,"G":135,"AVG":0.357,"HR":14,"RBI":106,"SB":5,"OPS":0.948,"ERA":5.39,"W":18,"SV":23,"SO":83,"WHIP":0.96,"profile":"KT 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00005"}}
+{"P_ID":"PLAYER-00005","surname":"조","P_NM":"조선수5","TEAM_NM":"NC","P_TYPE":"pitcher","POSITION":"외야수","STATUS":"현역","SEASON":1989,"G":7,"AVG":0.311,"HR":36,"RBI":124,"SB":32,"OPS":0.739,"ERA":5.07,"W":3,"SV":20,"SO":209,"WHIP":1.77,"profile":"NC 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00006"}}
+{"P_ID":"PLAYER-00006","surname":"조","P_NM":"조선수6","TEAM_NM":"삼성","P_TYPE":"pitcher","POSITION":"외야수","STATUS":"현역","SEASON":2000,"G":55,"AVG":0.295,"HR":3,"RBI":23,"SB":69,"OPS":0.643,"ERA":6.29,"W":20,"SV":11,"SO":216,"WHIP":0.94,"profile":"삼성 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00007"}}
+{"P_ID":"PLAYER-00007","surname":"조","P_NM":"조선수7","TEAM_NM":"삼성","P_TYPE":"pitcher","POSITION":"투수","STATUS":"현역","SEASON":2016,"G":35,"AVG":0.364,"HR":14,"RBI":101,"SB":34,"OPS":0.793,"ERA":4.21,"W":12,"SV":23,"SO":176,"WHIP":1.64,"profile":"삼성 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00008"}}
+{"P_ID":"PLAYER-00008","surname":"김","P_NM":"김선수8","TEAM_NM":"SSG","P_TYPE":"hitter","POSITION":"투수","STATUS":"현역","SEASON":1991,"G":56,"AVG":0.245,"HR":33,"RBI":1,"SB":5,"OPS":0.749,"ERA":4.96,"W":18,"SV":7,"SO":92,"WHIP":1.5,"profile":"SSG 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00009"}}
+{"P_ID":"PLAYER-00009","surname":"박","P_NM":"박선수9","TEAM_NM":"키움","P_TYPE":"pitcher","POSITION":"외야수","STATUS":"현역","SEASON":1993,"G":94,"AVG":0.362,"HR":0,"RBI":99,"SB":64,"OPS":0.554,"ERA":4.09,"W":11,"SV":16,"SO":97,"WHIP":1.03,"profile":"키움 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00010"}}
+{"P_ID":"PLAYER-00010","surname":"윤","P_NM":"윤선수10","TEAM_NM":"롯데","P_TYPE":"hitter","POSITION":"외야수","STATUS":"현역","SEASON":2020,"G":89,"AVG":0.345,"HR":41,"RBI":109,"SB":11,"OPS":0.805,"ERA":4.32,"W":17,"SV":12,"SO":15,"WHIP":1.68,"profile":"롯데 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00011"}}
+{"P_ID":"PLAYER-00011","surname":"박","P_NM":"박선수11","TEAM_NM":"KIA","P_TYPE":"pitcher","POSITION":"투수","STATUS":"현역","SEASON":1994,"G":121,"AVG":0.244,"HR":30,"RBI":70,"SB":34,"OPS":0.642,"ERA":1.93,"W":9,"SV":27,"SO":215,"WHIP":1.4,"profile":"KIA 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00012"}}
+{"P_ID":"PLAYER-00012","surname":"윤","P_NM":"윤선수12","TEAM_NM":"키움","P_TYPE":"pitcher","POSITION":"외야수","STATUS":"현역","SEASON":2005,"G":50,"AVG":0.377,"HR":44,"RBI":68,"SB":34,"OPS":0.743,"ERA":3.69,"W":18,"SV":24,"SO":4,"WHIP":1.48,"profile":"키움 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00013"}}
+{"P_ID":"PLAYER-00013","surname":"박","P_NM":"박선수13","TEAM_NM":"LG","P_TYPE":"hitter","POSITION":"투수","STATUS":"현역","SEASON":2001,"G":94,"AVG":0.277,"HR":38,"RBI":53,"SB":9,"OPS":0.853,"ERA":4.74,"W":6,"SV":20,"SO":117,"WHIP":0.91,"profile":"LG 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00014"}}
+{"P_ID":"PLAYER-00014","surname":"윤","P_NM":"윤선수14","TEAM_NM":"한화","P_TYPE":"hitter","POSITION":"투수","STATUS":"현역","SEASON":2010,"G":73,"AVG":0.185,"HR":40,"RBI":112,"SB":25,"OPS":1.05,"ERA":2.06,"W":13,"SV":35,"SO":47,"WHIP":1.29,"profile":"한화 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00015"}}
+{"P_ID":"PLAYER-00015","surname":"이","P_NM":"이선수15","TEAM_NM":"키움","P_TYPE":"hitter","POSITION":"포수","STATUS":"현역","SEASON":1982,"G":41,"AVG":0.255,"HR":23,"RBI":20,"SB":15,"OPS":0.737,"ERA":2.22,"W":3,"SV":40,"SO":192,"WHIP":1.28,"profile":"키움 소속 포수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00016"}}
+{"P_ID":"PLAYER-00016","surname":"윤","P_NM":"윤선수16","TEAM_NM":"롯데","P_TYPE":"pitcher","POSITION":"내야수","STATUS":"현역","SEASON":2007,"G":14,"AVG":0.202,"HR":40,"RBI":90,"SB":20,"OPS":0.841,"ERA":4.41,"W":15,"SV":10,"SO":82,"WHIP":1.09,"profile":"롯데 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00017"}}
+{"P_ID":"PLAYER-00017","surname":"이","P_NM":"이선수17","TEAM_NM":"삼성","P_TYPE":"hitter","POSITION":"내야수","STATUS":"현역","SEASON":2018,"G":124,"AVG":0.306,"HR":40,"RBI":69,"SB":20,"OPS":0.877,"ERA":4.38,"W":13,"SV":14,"SO":10,"WHIP":1.52,"profile":"삼성 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00018"}}
+{"P_ID":"PLAYER-00018","surname":"강","P_NM":"강선수18","TEAM_NM":"KIA","P_TYPE":"hitter","POSITION":"외야수","STATUS":"은퇴","SEASON":2020,"G":42,"AVG":0.241,"HR":42,"RBI":52,"SB":70,"OPS":0.985,"ERA":5.68,"W":8,"SV":39,"SO":5,"WHIP":1.74,"profile":"KIA 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00019"}}
+{"P_ID":"PLAYER-00019","surname":"윤","P_NM":"윤선수19","TEAM_NM":"KT","P_TYPE":"pitcher","POSITION":"외야수","STATUS":"현역","SEASON":2024,"G":3,"AVG":0.183,"HR":24,"RBI":12,"SB":56,"OPS":0.79,"ERA":2.28,"W":0,"SV":38,"SO":115,"WHIP":1.7,"profile":"KT 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00020"}}
+{"P_ID":"PLAYER-00020","surname":"김","P_NM":"김선수20","TEAM_NM":"KIA","P_TYPE":"hitter","POSITION":"포수","STATUS":"현역","SEASON":1989,"G":126,"AVG":0.238,"HR":37,"RBI":63,"SB":62,"OPS":0.992,"ERA":5.96,"W":2,"SV":13,"SO":133,"WHIP":1.48,"profile":"KIA 소속 포수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00021"}}
+{"P_ID":"PLAYER-00021","surname":"강","P_NM":"강선수21","TEAM_NM":"키움","P_TYPE":"hitter","POSITION":"외야수","STATUS":"현역","SEASON":1988,"G":46,"AVG":0.336,"HR":31,"RBI":109,"SB":34,"OPS":0.994,"ERA":4.48,"W":7,"SV":2,"SO":63,"WHIP":1.75,"profile":"키움 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00022"}}
+{"P_ID":"PLAYER-00022","surname":"박","P_NM":"박선수22","TEAM_NM":"한화","P_TYPE":"pitcher","POSITION":"내야수","STATUS":"은퇴","SEASON":2016,"G":122,"AVG":0.288,"HR":50,"RBI":71,"SB":10,"OPS":0.616,"ERA":4.19,"W":20,"SV":19,"SO":194,"WHIP":1.36,"profile":"한화 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00023"}}
+{"P_ID":"PLAYER-00023","surname":"박","P_NM":"박선수23","TEAM_NM":"SSG","P_TYPE":"hitter","POSITION":"투수","STATUS":"현역","SEASON":1982,"G":104,"AVG":0.308,"HR":33,"RBI":56,"SB":27,"OPS":0.78,"ERA":1.83,"W":1,"SV":33,"SO":117,"WHIP":1.76,"profile":"SSG 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00024"}}
+{"P_ID":"PLAYER-00024","surname":"조","P_NM":"조선수24","TEAM_NM":"SSG","P_TYPE":"pitcher","POSITION":"투수","STATUS":"은퇴","SEASON":2009,"G":71,"AVG":0.244,"HR":8,"RBI":90,"SB":12,"OPS":0.851,"ERA":1.65,"W":16,"SV":0,"SO":208,"WHIP":0.98,"profile":"SSG 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00025"}}
+{"P_ID":"PLAYER-00025","surname":"윤","P_NM":"윤선수25","TEAM_NM":"SSG","P_TYPE":"hitter","POSITION":"외야수","STATUS":"현역","SEASON":2017,"G":40,"AVG":0.355,"HR":12,"RBI":53,"SB":32,"OPS":0.543,"ERA":5.72,"W":8,"SV":13,"SO":145,"WHIP":1.43,"profile":"SSG 소속 외야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00026"}}
+{"P_ID":"PLAYER-00026","surname":"이","P_NM":"이선수26","TEAM_NM":"KT","P_TYPE":"hitter","POSITION":"포수","STATUS":"현역","SEASON":2021,"G":102,"AVG":0.323,"HR":49,"RBI":51,"SB":38,"OPS":0.532,"ERA":4.36,"W":12,"SV":15,"SO":115,"WHIP":1.78,"profile":"KT 소속 포수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00027"}}
+{"P_ID":"PLAYER-00027","surname":"김","P_NM":"김선수27","TEAM_NM":"두산","P_TYPE":"hitter","POSITION":"투수","STATUS":"현역","SEASON":2014,"G":50,"AVG":0.231,"HR":32,"RBI":34,"SB":2,"OPS":0.649,"ERA":3.08,"W":4,"SV":34,"SO":204,"WHIP":1.3,"profile":"두산 소속 투수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00028"}}
+{"P_ID":"PLAYER-00028","surname":"강","P_NM":"강선수28","TEAM_NM":"삼성","P_TYPE":"pitcher","POSITION":"내야수","STATUS":"현역","SEASON":2008,"G":57,"AVG":0.218,"HR":19,"RBI":60,"SB":51,"OPS":0.993,"ERA":4.77,"W":16,"SV":3,"SO":121,"WHIP":1.68,"profile":"삼성 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00029"}}
+{"P_ID":"PLAYER-00029","surname":"박","P_NM":"박선수29","TEAM_NM":"삼성","P_TYPE":"hitter","POSITION":"내야수","STATUS":"현역","SEASON":1991,"G":133,"AVG":0.205,"HR":55,"RBI":93,"SB":47,"OPS":0.78,"ERA":4.35,"W":3,"SV":28,"SO":28,"WHIP":1.02,"profile":"삼성 소속 내야수 선수입니다."}
+{"index":{"_index":"kbo-players","_id":"PLAYER-00030"}}
+{"P_ID":"PLAYER-00030","surname":"윤","P_NM":"윤선수30","TEAM_NM":"LG","P_TYPE":"pitcher","POSITION":"포수","STATUS":"현역","SEASON":2012,"G":7,"AVG":0.351,"HR":14,"RBI":42,"SB":43,"OPS":0.76,"ERA":6.13,"W":10,"SV":38,"SO":154,"WHIP":1.31,"profile":"LG 소속 포수 선수입니다."}

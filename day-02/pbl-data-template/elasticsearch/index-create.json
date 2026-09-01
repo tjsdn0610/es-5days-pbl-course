@@ -1,0 +1,28 @@
+{
+  "settings": { "number_of_shards": 1, "number_of_replicas": 1 },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "P_ID": { "type": "keyword" },
+      "surname": { "type": "keyword" },
+      "P_NM": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+      "TEAM_NM": { "type": "keyword" },
+      "P_TYPE": { "type": "keyword" },
+      "POSITION": { "type": "keyword" },
+      "STATUS": { "type": "keyword" },
+      "SEASON": { "type": "integer" },
+      "G": { "type": "integer" },
+      "AVG": { "type": "float" },
+      "HR": { "type": "integer" },
+      "RBI": { "type": "integer" },
+      "SB": { "type": "integer" },
+      "OPS": { "type": "float" },
+      "ERA": { "type": "float" },
+      "W": { "type": "integer" },
+      "SV": { "type": "integer" },
+      "SO": { "type": "integer" },
+      "WHIP": { "type": "float" },
+      "profile": { "type": "text" }
+    }
+  }
+}

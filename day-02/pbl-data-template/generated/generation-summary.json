@@ -1,0 +1,97 @@
+{
+    "index":  "kbo-players",
+    "document_count":  5000,
+    "seed":  20260901,
+    "id_field":  "P_ID",
+    "files":  {
+                  "bulk":  "kbo-players-5000.ndjson",
+                  "sample":  "kbo-players-sample-30.ndjson"
+              },
+    "field_kinds":  [
+                        {
+                            "name":  "P_ID",
+                            "kind":  "id"
+                        },
+                        {
+                            "name":  "surname",
+                            "kind":  "choice"
+                        },
+                        {
+                            "name":  "P_NM",
+                            "kind":  "template"
+                        },
+                        {
+                            "name":  "TEAM_NM",
+                            "kind":  "choice"
+                        },
+                        {
+                            "name":  "P_TYPE",
+                            "kind":  "weighted_choice"
+                        },
+                        {
+                            "name":  "POSITION",
+                            "kind":  "choice"
+                        },
+                        {
+                            "name":  "STATUS",
+                            "kind":  "weighted_choice"
+                        },
+                        {
+                            "name":  "SEASON",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "G",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "AVG",
+                            "kind":  "decimal"
+                        },
+                        {
+                            "name":  "HR",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "RBI",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "SB",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "OPS",
+                            "kind":  "decimal"
+                        },
+                        {
+                            "name":  "ERA",
+                            "kind":  "decimal"
+                        },
+                        {
+                            "name":  "W",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "SV",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "SO",
+                            "kind":  "integer"
+                        },
+                        {
+                            "name":  "WHIP",
+                            "kind":  "decimal"
+                        },
+                        {
+                            "name":  "profile",
+                            "kind":  "template"
+                        }
+                    ],
+    "generated_at":  "deterministic-from-seed",
+    "fixed_document_count":  0,
+    "settings_sha256":  "435C0BAACD681A532822C5535FB14E304989F79CF7BA2CA92660089B123FF33E",
+    "bulk_sha256":  "0E4BD656BFC5FCA4CD632492EF616C4F5EC7B9D855EE92B475116FA96E577EB5",
+    "mapping_sha256":  "29DA3D4F8A4C2B717A1ACFA8BB06CB2CF3B99363B5844DBEFC5AA0A9C2216CDC"
+}
