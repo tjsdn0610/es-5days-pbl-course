@@ -20,9 +20,9 @@ GET /products/_search
 
 ### 결과 입력
 
-- `hits.total.value`:
-- 확인한 문서 ID 3개:
-- 각 문서의 category / in_stock / price:
+- `hits.total.value`: 380
+- 확인한 문서 ID 3개: P-00025, P-00129, P-00185
+- 각 문서의 category / in_stock / price: 전자기기/true/53800, 전자기기/true/146400, 전자기기/true,162800
 - 조건을 위반한 문서가 있는가:
 
 ## (공통) 문제 2 — 경계 포함 범위 직접 구현
@@ -32,13 +32,41 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 10,
+  "_source": [
+    "product_id",
+    "name",
+    "category",
+    "price"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "category": "전자기기"
+          }
+        },
+        {
+          "range": {
+            "price": {
+              "gte": 50000,
+              "lte": 200000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 ### 결과 입력
 
-- `hits.total.value`:
-- 최소·최대 price:
+- `hits.total.value`: 440
+- 최소·최대 price: 59400/151100
 - 50,000 또는 200,000 경계 문서 존재 여부와 ID:
 
 ## (공통) 문제 3 — 경계 제외 범위 직접 구현
@@ -48,7 +76,35 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 10,
+  "_source": [
+    "product_id",
+    "name",
+    "category",
+    "price"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "category": "전자기기"
+          }
+        },
+        {
+          "range": {
+            "price": {
+              "gt": 50000,
+              "lt": 200000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 ### 비교 결과
@@ -70,10 +126,29 @@ GET /products/_search
 ### API와 결과 입력
 
 ```http
-
+GET /kbo-players/_search
+{
+  "size": 10,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "TEAM_NM": "삼성"
+          }
+        },
+        {
+          "term": {
+            "STATUS": "현역"
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
-- field·type·값 2개:
+- field·type·값 2개:TEAM_NM: 선수의 소속 구단을 정확하게 검색, STATUS: 선수의 현재 상태(현역/은퇴)를 정확하게 검색
 - 기대 ID / 제외 ID:
 - 실제 결과와 판정:
 
@@ -90,10 +165,21 @@ GET /products/_search
 ### API와 결과 입력
 
 ```http
-
+GET /kbo-players/_search
+{
+  "size": 10,
+  "query": {
+    "range": {
+      "SEASON": {
+        "gte": 2000,
+        "lte": 2020
+      }
+    }
+  }
+}
 ```
 
-- field / type / 경계값:
+- field / type / 경계값:2000/2020
 - 포함 요청 total / 제외 요청 total:
 - 달라진 문서 ID:
 - 경계 판정:
