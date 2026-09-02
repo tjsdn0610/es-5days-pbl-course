@@ -18,7 +18,7 @@ GET /products/_search
 ### 결과 입력
 
 - `hits.total.value`:
-- 상위 3개 ID·name:
+- 상위 3개 ID·name: P-000241 SoundLab 프리미엄 무선 이어폰, P-00305 Auralis 실속형 무선 이어폰, P-00529 NeoTech 스마트 무선 이어폰
 - 각 문서가 name·description 중 어디에서 의도와 연결되는가:
 - 상위 3개 관련/보류/무관 판정:
 
