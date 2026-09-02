@@ -17,7 +17,7 @@ GET /products/_search
 
 ### 결과 입력
 
-- `hits.total.value`:
+- `hits.total.value`: 505
 - 상위 3개 ID·name: P-000241 SoundLab 프리미엄 무선 이어폰, P-00305 Auralis 실속형 무선 이어폰, P-00529 NeoTech 스마트 무선 이어폰
 - 각 문서가 name·description 중 어디에서 의도와 연결되는가: name
 - 상위 3개 관련/보류/무관 판정:
@@ -48,7 +48,7 @@ GET /products/_search
 
 - 변경 전 상위 3개 ID: P-000241 SoundLab 프리미엄 무선 이어폰, P-00305 Auralis 실속형 무선 이어폰, P-00529 NeoTech 스마트 무선 이어폰
 - 변경 후 상위 3개 ID:
-- 순위가 달라진 문서와 이유:
+- 순위가 달라진 문서와 이유: 
 - boost가 사용자 의도에 유리했는가:
 
 ## (공통) 문제 3 — 구문 검색 직접 구현
@@ -58,13 +58,24 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 5,
+  "query": {
+    "match_phrase": {
+      "name": {
+        "query": "무선 이어폰",
+        "slop": 0
+      }
+    }
+  }
+}
 ```
 
 ### 결과 입력
 
-- `hits.total.value`:
-- 상위 문서 ID·name:  
+- `hits.total.value`: 249
+- 상위 문서 ID·name:  P-00241 SoundLab 프리미엄 무선 이어폰
 - 문제 1보다 결과가 같거나 줄어든 이유:
 - 구문 의도에 맞지 않는 문서가 있는가:
 
