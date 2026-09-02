@@ -96,7 +96,13 @@ GET products/_search
 ### API와 결과 입력
 
 ```http
-
+GET kbo-player/_search
+{
+  "size": 5,
+  "query": {
+    "match_all": {}
+  }
+}
 ```
 
 - 자기 index:
