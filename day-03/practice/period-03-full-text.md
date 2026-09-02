@@ -19,7 +19,7 @@ GET /products/_search
 
 - `hits.total.value`:
 - 상위 3개 ID·name: P-000241 SoundLab 프리미엄 무선 이어폰, P-00305 Auralis 실속형 무선 이어폰, P-00529 NeoTech 스마트 무선 이어폰
-- 각 문서가 name·description 중 어디에서 의도와 연결되는가:
+- 각 문서가 name·description 중 어디에서 의도와 연결되는가: name
 - 상위 3개 관련/보류/무관 판정:
 
 ## (공통) 문제 2 — field boost 직접 구현
@@ -29,12 +29,24 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 5,
+  "query": {
+    "multi_match": {
+      "query": "무선 이어폰",
+      "fields": [
+        "name^3",
+        "description"
+      ]
+    }
+  }
+}
 ```
 
 ### 비교 결과
 
-- 변경 전 상위 3개 ID:
+- 변경 전 상위 3개 ID: P-000241 SoundLab 프리미엄 무선 이어폰, P-00305 Auralis 실속형 무선 이어폰, P-00529 NeoTech 스마트 무선 이어폰
 - 변경 후 상위 3개 ID:
 - 순위가 달라진 문서와 이유:
 - boost가 사용자 의도에 유리했는가:
@@ -52,7 +64,7 @@ GET /products/_search
 ### 결과 입력
 
 - `hits.total.value`:
-- 상위 문서 ID·name:
+- 상위 문서 ID·name:  
 - 문제 1보다 결과가 같거나 줄어든 이유:
 - 구문 의도에 맞지 않는 문서가 있는가:
 
