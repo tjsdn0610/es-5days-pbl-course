@@ -28,14 +28,26 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET products/_search
+{
+  "size": 3,
+  "_source": [
+    "product_id",
+    "name",
+    "price",
+    "in_stock"
+  ],
+  "query": {
+    "match_all": {}
+  }
+}
 ```
 
 ### 결과 입력
 
-- 반환 문서 수:
+- 반환 문서 수: 3
 - `_source`에 요구하지 않은 field가 포함됐는가:
-- 검증한 문서 ID:
+- 검증한 문서 ID:P-0003, P-0004, P-0008
 
 ## (공통) 문제 3 — 정렬이 포함된 전체 조회 구현
 
