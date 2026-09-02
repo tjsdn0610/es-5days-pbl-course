@@ -17,7 +17,7 @@ GET /products/_search
 - HTTP 성공 여부:
 - `hits.total.value`:
 - `hits.hits`에 반환된 문서 수:
-- 첫 번째 문서의 `_id`:
+- 첫 번째 문서의 `_id`: P-00001
 - 첫 번째 문서의 `_source` field 3개:
 - `hits.total.value`와 반환 문서 수가 다를 수 있는 이유:
 
