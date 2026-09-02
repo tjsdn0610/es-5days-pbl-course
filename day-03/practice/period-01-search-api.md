@@ -56,7 +56,25 @@ GET products/_search
 ### API 전체 입력
 
 ```http
-
+GET products/_search
+{
+  "size": 10,
+  "_source": [
+    "product_id",
+    "name",
+    "price"
+  ],
+  "query": {
+    "match_all": {}
+  },
+  "sort": [
+    {
+      "price": {
+        "order": "asc"
+      }
+    }
+  ]
+}
 ```
 
 ### 결과 입력
