@@ -92,13 +92,25 @@ GET /products/_search
 ### API와 결과 입력
 
 ```http
-
+GET /kbo-players/_search
+{
+  "size": 5,
+  "query": {
+    "multi_match": {
+      "query": "삼성",
+      "fields": [
+        "P_NM",
+        "profile"
+      ]
+    }
+  }
+}
 ```
 
-- 사용자 질문·검색어:
-- 선택 field와 역할:
-- 상위 3개 판정:
-- query 선택 근거:
+- 사용자 질문·검색어: 삼성
+- 선택 field와 역할:P_NM:선수의 이름을 검색하는 field, profile:선수의 소속구단 및 포지션 field
+- 상위 3개 판정: profile: "삼성 소속 내야수 선수입니다.","삼성 소속 포수 선수입니다."
+- query 선택 근거:P_NM과 profile 두 개의 text field에 동일한 사용자 검색어를 적용해야 하므로 multi_match를 선택하였다
 
 ## (개인) 문제 5 — boost 또는 phrase 가설 검증
 
@@ -113,10 +125,21 @@ GET /products/_search
 ### API와 결과 입력
 
 ```http
-
+GET /kbo-players/_search
+{
+  "size": 5,
+  "query": {
+    "multi_match": {
+      "query": "삼성",
+      "fields": [
+        "profile"
+      ]
+    }
+  }
+}
 ```
 
-- 선택한 가설:
-- 변경 전·후 상위 3개:
+- 선택한 가설: 삼성이라는 검색어는 선수 이름(P_NM)보다 선수의 소속 구단 정보가 담긴 profile에서 더 잘 검색될 것이다.
+- 변경 전·후 상위 3개: 변경 전: 
 - 개선/보류/악화 판정:
 - 판정 근거:
