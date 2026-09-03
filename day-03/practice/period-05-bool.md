@@ -21,10 +21,10 @@ GET /products/_search
 
 ### 결과 입력
 
-- `hits.total.value`:
-- 상위 3개 ID·name:
-- 세 filter의 실제 값:
-- must와 filter의 역할 차이:
+- `hits.total.value`: 74
+- 상위 3개 ID·name: P-00025 / MobiCore 컴팩트 무선 이어폰, P-00129 / Auralis 스마트 무선 이어폰, P-00369 / SoundLab 데일리 무선 이어폰
+- 세 filter의 실제 값: category : 전자기기, in_stock : true, price 50000~200000
+- must와 filter의 역할 차이: must : name필드에 "무선"이라는 검색어가 포함되는 문서를 찾음. filter : category,in_stock,price조건을 만족하는 문서 남김
 
 ## (공통) 문제 2 — 조건 제거 실험 직접 구현
 
@@ -33,13 +33,43 @@ GET /products/_search
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 10,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "name": "무선"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "term": {
+            "category": "전자기기"
+          }
+        },
+        {
+          "range": {
+            "price": {
+              "gte": 50000,
+              "lte": 200000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 ### 비교 결과
 
-- 변경 전 total / 변경 후 total:
-- 새로 포함된 문서 ID·in_stock:
+- 변경 전 total / 변경 후 total: 74 / 83
+- 새로 포함된 문서 ID·in_stock: P-00457 / MobiCore 데일리 무선 이어폰 → in_stock: false
+                               P-00521 / NeoTech 스마트 무선 이어폰 → in_stock: false
 - 변화가 없다면 데이터 근거:
 - 제거한 조건의 역할:
 
@@ -50,15 +80,42 @@ category가 `전자기기`인 문서 중 `name`에 `무선`이 있거나 `in_sto
 ### API 전체 입력
 
 ```http
-
+GET /products/_search
+{
+  "size": 10,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "category": "전자기기"
+          }
+        }
+      ],
+      "should": [
+        {
+          "match": {
+            "name": "무선"
+          }
+        },
+        {
+          "term": {
+            "in_stock": true
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}
 ```
 
 ### 결과 입력
 
-- `hits.total.value`:
+- `hits.total.value`: 1097
 - 무선이지만 품절인 문서 존재 여부:
 - 무선이 아니지만 재고가 있는 문서 존재 여부:
-- should 조건 판정:
+- should 조건 판정: name에 무선 또는 in_stock=true 중 최소 1개를 만족하면 통과. 따라서 조건은 category=전자기기 AND (name에 무선 OR in_stock=true)
 
 ## (개인) 문제 4 — 자기 bool 검색
 
@@ -73,13 +130,43 @@ category가 `전자기기`인 문서 중 `name`에 `무선`이 있거나 `in_sto
 ### API와 결과 입력
 
 ```http
-
+GET /kbo-players/_search
+{
+  "size": 10,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "TEAM_NM": "삼성"
+          }
+        },
+        {
+          "term": {
+            "STATUS": "현역"
+          }
+        },
+        {
+          "term": {
+            "POSITION": "내야수"
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
-- 사용자 질문:
+- 사용자 질문: 삼성 소속이고 현역인 내야수 선수를 찾아줘
 - must와 이유:
 - filter 2개와 이유:
-- 실제 검증 결과:
+  TEAM_NM → 삼성: 소속팀이 정확히 삼성인 선수만 검색하기 위해 term 사용
+  STATUS → 현역: 선수 상태가 정확히 현역인 선수만 검색하기 위해 term 사용
+  POSITION → 내야수: 포지션이 정확히 내야수인 선수만 검색하기 위해 term 사용
+- 실제 검증 결과:   선수 ID	선수명	팀	상태	포지션
+              PLAYER-00002	윤선수2	삼성	현역	내야수
+              PLAYER-00017	이선수17	삼성	현역	내야수
+              PLAYER-00028	강선수28	삼성	현역	내야수
 
 ## (개인) 문제 5 — 조건 역할 검증
 
