@@ -70,8 +70,8 @@ GET /products/_search
 - 변경 전 total / 변경 후 total: 74 / 83
 - 새로 포함된 문서 ID·in_stock: P-00457 / MobiCore 데일리 무선 이어폰 → in_stock: false
                                P-00521 / NeoTech 스마트 무선 이어폰 → in_stock: false
-- 변화가 없다면 데이터 근거:
-- 제거한 조건의 역할:
+- 변화가 없다면 데이터 근거: 해당 없음 (74 → 83으로 9건 증가)
+- 제거한 조건의 역할: `term: in_stock=true` filter는 재고가 있는 상품만 남기는 역할. 제거하면 품절(`in_stock=false`) 상품도 결과에 들어와, "무선"이면서 전자기기·5만~20만 원이지만 품절인 상품(P-00457, P-00521 등)이 추가로 잡힌다.
 
 ## (공통) 문제 3 — should 조건 직접 구현
 
@@ -113,8 +113,8 @@ GET /products/_search
 ### 결과 입력
 
 - `hits.total.value`: 1097
-- 무선이지만 품절인 문서 존재 여부:
-- 무선이 아니지만 재고가 있는 문서 존재 여부:
+- 무선이지만 품절인 문서 존재 여부: 존재함. `must: match name=무선` + `filter: category=전자기기, in_stock=false` 로 확인하면 32건(예: P-00457 "MobiCore 데일리 무선 이어폰", P-00521 "NeoTech 스마트 무선 이어폰"). should의 "name 무선" 조건으로 통과한다.
+- 무선이 아니지만 재고가 있는 문서 존재 여부: 존재함. `must_not: match name=무선` + `filter: category=전자기기, in_stock=true` 로 확인하면 848건(예: P-00009 "NeoTech 데일리 기계식 키보드"). should의 "in_stock=true" 조건으로 통과한다.
 - should 조건 판정: name에 무선 또는 in_stock=true 중 최소 1개를 만족하면 통과. 따라서 조건은 category=전자기기 AND (name에 무선 OR in_stock=true)
 
 ## (개인) 문제 4 — 자기 bool 검색
@@ -158,7 +158,7 @@ GET /kbo-players/_search
 ```
 
 - 사용자 질문: 삼성 소속이고 현역인 내야수 선수를 찾아줘
-- must와 이유:
+- must와 이유: must 미사용(0개). 세 조건(TEAM_NM·STATUS·POSITION)이 모두 `keyword` 정확 일치이고 관련도 점수(랭킹)가 필요 없어, 점수를 계산하지 않고 캐시되는 filter만 사용했다.
 - filter 2개와 이유:
   TEAM_NM → 삼성: 소속팀이 정확히 삼성인 선수만 검색하기 위해 term 사용
   STATUS → 현역: 선수 상태가 정확히 현역인 선수만 검색하기 위해 term 사용
@@ -181,10 +181,40 @@ GET /kbo-players/_search
 ### API와 결과 입력
 
 ```http
-
+GET kbo-players/_search
+{
+  "size": 10,
+  "_source": ["P_ID", "P_NM", "TEAM_NM", "STATUS", "POSITION"],
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "TEAM_NM": "삼성" } },
+        { "term": { "STATUS": "현역" } }
+      ]
+    }
+  }
+}
 ```
 
-- 제거한 filter:
-- 전/후 total:
-- 새로 포함된 ID와 값:
-- 제외 확인 ID와 근거:
+독립 확인 요청:
+
+```http
+GET kbo-players/_search
+{
+  "size": 3,
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "TEAM_NM": "삼성" } },
+        { "term": { "STATUS": "현역" } },
+        { "term": { "POSITION": "포수" } }
+      ]
+    }
+  }
+}
+```
+
+- 제거한 filter: `term: POSITION=내야수`
+- 전/후 total: 87 (삼성·현역·내야수) → 355 (삼성·현역)
+- 새로 포함된 ID와 값: PLAYER-00003(포수), PLAYER-00006(외야수), PLAYER-00007(투수) — 모두 TEAM_NM=삼성·STATUS=현역이지만 POSITION이 내야수가 아니어서 원래 결과에는 없던 문서.
+- 제외 확인 ID와 근거: PLAYER-00003. 삼성·현역이지만 `POSITION=포수`라 원래 3-filter(내야수) 결과 87건에 포함되지 않는다. 독립 요청(삼성·현역·포수)에서는 정상적으로 조회돼, 빠진 이유가 POSITION filter 때문임을 확인했다.
