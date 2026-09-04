@@ -17,7 +17,7 @@
 
 ### 결과 입력
 
-- Dashboard 이름: `D4 공통 상품 Dashboard - (이름)`
+- Dashboard 이름: 
 - 사용한 계산: Count of records (Records)
 - 실제 Metric 값: 10,000
 - 시간 범위: 2025-08-01 00:00 ~ 2026-09-01 00:00
