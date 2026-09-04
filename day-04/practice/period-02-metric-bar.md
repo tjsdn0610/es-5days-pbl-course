@@ -23,7 +23,9 @@
 - 시간 범위: 2025-08-01 00:00 ~ 2026-09-01 00:00
 - KQL/filter/control 상태: 없음 (모두 비어 있음)
 - 정상/보류/오류와 이유: 보류. Count는 10,000으로 정확히 집계되나 문제지 정상 기준(20,000)과 다르다. 현재 환경 `products` 적재량이 10,000이므로 이 값이 정상이며 이후 패널 기준값을 10,000으로 잡는다.
-- 캡처 파일: (Metric 패널 값·시간 범위 화면 캡처 필요 — p04-p02-q01-metric.png)
+- 캡처 파일: `../evidence/day-04/p04-p02-q01-metric.png` (ES 집계 결과 기반, 2026-09-04)
+
+![전체 상품 수 Metric](../evidence/day-04/p04-p02-q01-metric.png)
 
 ## (공통·필수) 문제 2 — category Bar 제작
 
@@ -43,7 +45,9 @@
 - Number of values: 8
 - 표시된 category 수: 8
 - 각 category 값이 공통 기준과 일치하는가: 예. 8개 category가 모두 정확히 1,250건으로 균등하다 — 도서·반려동물·뷰티·생활·스포츠·식품·전자기기·패션 (합 10,000). `sum_other_doc_count` = 0이라 8개로 전부 표시됨.
-- 캡처 파일: (category Bar 8개 막대 화면 캡처 필요 — p04-p02-q02-category-bar.png)
+- 캡처 파일: `../evidence/day-04/p04-p02-q02-category-bar.png` (ES 집계 결과 기반, 2026-09-04)
+
+![카테고리별 상품 수 Bar](../evidence/day-04/p04-p02-q02-category-bar.png)
 
 ## (변형·필수) 문제 3 — Bar 방향 한 가지만 바꿔 비교
 
@@ -79,7 +83,9 @@ Bar에 `스포츠` 등 하나의 category만 보인다고 가정합니다. Dashb
 - 복구 후 막대 수: 8
 - 복구 후 Metric 값: 10,000
 - 원인이 없었다면 추가로 확인한 Lens 설정: Top values의 `Number of values`가 1로 줄었는지, `category` field에 개별 filter가 걸렸는지 확인
-- 캡처 파일: (막대 1개 → 8개 복구 화면 캡처 필요 — p04-p02-q04-bar-recovery.png)
+- 캡처 파일: `../evidence/day-04/p04-p02-q04-bar-recovery.png` (ES 집계 결과 기반, 2026-09-04)
+
+![막대 1개 → 8개 복구](../evidence/day-04/p04-p02-q04-bar-recovery.png)
 
 ## (개인·선택 도전) 문제 5 — 내 범주 field로 Metric+Bar 설계
 

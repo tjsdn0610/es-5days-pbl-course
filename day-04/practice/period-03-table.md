@@ -26,7 +26,9 @@ Average는 `Metrics → Quick function → Average → Field: price`로 추가�
 - 표시된 행 수: 10
 - 첫 3개 브랜드와 상품 수: (Top values = Count 내림차순) 한끼연구소 277, 냥이마켓 272, MobiCore 271
 - 첫 3개 브랜드의 평균 가격: 한끼연구소 ≈ 38,869원, 냥이마켓 ≈ 116,968원, MobiCore ≈ 231,226원
-- 캡처 파일: (brand Table 3열 화면 캡처 필요 — p04-p03-q01-brand-table.png)
+- 캡처 파일: `../evidence/day-04/p04-p03-q01-brand-table.png` (ES 집계 결과 기반, 2026-09-04)
+
+![브랜드별 상품 수와 평균 가격 Table](../evidence/day-04/p04-p03-q01-brand-table.png)
 
 ## (변형·필수) 문제 2 — 정렬 기준 하나만 바꿔 비교
 
@@ -72,6 +74,8 @@ Table의 나머지 설정을 유지하고 다음 두 정렬을 비교하세요.
 - 완료 기준: 10개 팀 행이 모두 표시되고 각 행에 Count와 평균 2개 값이 채워짐
 - 실제 결과 또는 데이터 부족 상태: 팀별 평균 타율 0.278~0.284로 매우 좁은 범위(최상위 LG·키움 ≈ 0.284, 삼성 ≈ 0.2785), 팀별 평균 HR 26.3~28.4 (KT 최고 28.4, 한화 최저 26.3). 팀 간 차이가 작아 "특정 팀 타선이 압도적"이라고 말하긴 어렵다.
 - 캡처/설계 문서 경로: `evidence/day-04/dashboard-plan.md`
+
+![팀별 평균 타율·평균 홈런 Table](../evidence/day-04/p04-p03-q04-team-table.png)
 
 ## (선택 도전) 문제 5 — Table에 필요한 Metric 하나 추가
 

@@ -17,7 +17,9 @@ Dashboard 사용자가 실제로 할 행동 두 가지를 실행하세요. 각 �
 
 - 두 행동이 서로 다른 이유: 행동 1은 "기준값(투수)을 확인하고 제외"하는 흐름, 행동 2는 "가장 강한 포지션을 찾아 보강 우선순위에서 내리는" 흐름이라 판단 방향이 반대다.
 - 사용자가 멈추거나 헷갈린 지점: Control 드롭다운과 Table 행 클릭(=filter) 중 무엇으로 걸러야 하는지 잠깐 헷갈림
-- 캡처 파일: (두 행동 적용/복구 화면 캡처 필요 — p04-p08-q01-actions.png)
+- 캡처 파일: `../evidence/day-04/p04-p08-q01-actions.png` (ES 집계 결과 기반, 2026-09-04)
+
+![사용자 행동 2가지 (POSITION 투수/포수)](../evidence/day-04/p04-p08-q01-actions.png)
 
 ## (개인·필수) 문제 2 — 핵심값 3개 교차 검증
 
@@ -44,7 +46,9 @@ Dashboard의 핵심값 3개를 Discover, `_count`, 또는 aggregation 요청과 
 - 수정 후 결과: 팀별 Bar 합계 3,498 (LG 372 · KT 359 · 두산 357 … 키움 320), Metric과 일치
 - 같은 조건 재검증 결과: `filter STATUS=현역` + terms agg `TEAM_NM` → LG 372 등으로 동일
 - 개선/보류/악화 판정과 근거: 개선. 모든 패널이 "현역 선수"라는 같은 모집단을 세게 돼 패널 간 값을 직접 비교할 수 있다.
-- 수정 전·후 캡처: (팀별 Bar 합계 5,000 → 3,498 화면 캡처 필요 — p04-p08-q03-fix.png)
+- 수정 전·후 캡처: `../evidence/day-04/p04-p08-q03-fix.png` (ES 집계 결과 기반, 2026-09-04)
+
+![팀별 Bar 합계 5,000 → 3,498](../evidence/day-04/p04-p08-q03-fix.png)
 
 ## (개인·필수) 문제 4 — 결과 3·한계 2·필요 데이터 1과 제출
 
@@ -70,7 +74,9 @@ Dashboard의 핵심값 3개를 Discover, `_count`, 또는 aggregation 요청과 
 ### 제출 기록
 
 - Dashboard 제목: `D4 개인 미션 - KBO 선수 성적 - (이름)`
-- 전체 화면 캡처 경로: `evidence/day-04-practice/p04-p07-q03-personal-layout.png` (Kibana에서 촬영 필요)
+- 전체 화면 캡처 경로: `../evidence/day-04/personal-dashboard.png` · Control 적용본 `../evidence/day-04/personal-dashboard-filtered.png`
+
+![개인 KBO Dashboard](../evidence/day-04/personal-dashboard.png)
 - JSON export 경로(선택): `evidence/day-04/dashboard-personal.ndjson` (More → Export)
 - `dashboard-plan.md` 경로: `evidence/day-04/dashboard-plan.md`
 - `dashboard-review.md` 경로: `evidence/day-04/dashboard-review.md`

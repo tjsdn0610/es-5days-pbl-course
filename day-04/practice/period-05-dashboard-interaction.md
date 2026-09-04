@@ -50,7 +50,9 @@ category 하나를 선택한 뒤 두 패널 이상의 값이 바뀌는지 확인
 - 함께 바뀐 패널 2개: 카테고리별 Bar(막대 1개만 남음), 브랜드별 Table(전자기기 브랜드만·평균 가격 상승) — 그 외 재고 Donut·가격 구간 Bar도 전자기기 기준으로 재계산됨
 - `Any` 복구 후 Metric: 10,000
 - 정상 여부: 정상 (Control이 연결된 모든 Lens 패널에 동시에 적용·해제됨)
-- 캡처 파일: (Control 적용 전/후 화면 캡처 필요 — p04-p05-q02-control.png)
+- 캡처 파일: `../evidence/day-04/p04-p05-q02-control.png` (ES 집계 결과 기반, 2026-09-04)
+
+![category Control 적용 전/후](../evidence/day-04/p04-p05-q02-control.png)
 
 ## (진단·필수) 문제 3 — Control·Filter·KQL을 구분하고 초기화
 
@@ -69,7 +71,9 @@ category 하나를 선택한 뒤 두 패널 이상의 값이 바뀌는지 확인
 - 세 방식의 사용자가 느끼는 차이: Control은 미리 정의된 field 값을 드롭다운에서 고르는 방식이라 빠르고 오타가 없다. Filter는 상단에 pill로 남아 조건이 명시적이고 켜고/끄기 쉽다. KQL은 자유 문법이라 복합 조건에 강하지만 field명·연산자 오타 시 결과가 어긋난다.
 - 모든 조건 제거 후 전체값: 10,000
 - `Filter for value` 문구가 없을 때 확인한 filter pill과 변한 패널: 상단 filter pill 영역을 직접 확인하고, Metric·Bar 값이 전체값(10,000)과 다르면 어떤 조건이 남아 있다고 판단
-- 캡처 파일: (세 방식 적용/해제 화면 캡처 필요 — p04-p05-q03-control-filter-kql.png)
+- 캡처 파일: `../evidence/day-04/p04-p05-q03-control-filter-kql.png` (ES 집계 결과 기반, 2026-09-04)
+
+![Control · Filter · KQL 비교](../evidence/day-04/p04-p05-q03-control-filter-kql.png)
 
 ## (공통·필수) 문제 4 — 목요일 종료용 저장·재열기
 
@@ -85,7 +89,9 @@ Dashboard를 `D4 공통 상품 Dashboard - 이름`으로 저장한 뒤 Dashboard
 - KQL/filter 상태: 없음
 - Metric 값: 10,000
 - 다시 열었을 때 달라진 항목: 없음 — 시간 범위·Control 값·패널 배치가 저장 시점 그대로 복구됨
-- 전체 화면 캡처: (재열기 후 전체 화면 캡처 필요 — p04-p05-q04-reopen.png)
+- 전체 화면 캡처: `../evidence/day-04/p04-p05-q04-reopen.png` (ES 집계 결과 기반, 2026-09-04)
+
+![저장 후 재열기 상태](../evidence/day-04/p04-p05-q04-reopen.png)
 
 ## (선택 도전) 문제 5 — 30초 사용성 테스트
 

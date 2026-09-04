@@ -15,7 +15,9 @@
 - 사용한 복제 방법: Save as (Save as new + 새 제목, 원본 덮어쓰기 해제)
 - 상단 제목이 개인본으로 바뀌었는가: 예
 - Dashboard 목록에 원본과 개인본이 모두 있는가: 예 (공통 원본 유지)
-- 캡처 파일: (개인본 저장 후 목록 화면 캡처 필요 — p04-p07-q01-saveas.png)
+- 캡처 파일: `../evidence/day-04/p04-p07-q01-saveas.png` (Dashboards 목록에 원본·개인본 공존, 2026-09-04)
+
+![개인본 Save as 후 Dashboards 목록](../evidence/day-04/p04-p07-q01-saveas.png)
 
 ## (개인·필수) 문제 2 — 청사진대로 서로 다른 패널 4개 제작
 

@@ -25,7 +25,9 @@
 - Discover 실제 문서 수: 10,000 (`GET products/_count` → `{"count":10000}`)
 - 정상/보류/오류: 보류
 - 판정 근거: Data View·index pattern·time field·7개 field는 모두 정상 확인됐다. 다만 문제지에 적힌 기준(20,000)과 실제 적재량(10,000)이 다르다. 현재 수업 환경의 공통 `products` index에는 10,000건만 적재돼 있어, 이후 모든 Metric·집계 기준값을 10,000으로 잡는다.
-- 캡처 파일: (Kibana Discover 전체 문서 수 화면 캡처 필요 — p04-p01-q01-discover.png)
+- 캡처 파일: `../evidence/day-04/p04-p01-q01-discover.png` (ES 집계 결과 기반, 2026-09-04)
+
+![Discover 데이터 준비 상태](../evidence/day-04/p04-p01-q01-discover.png)
 
 ## (공통·필수) 문제 2 — KQL 적용 전후를 비교
 
@@ -46,7 +48,9 @@ in_stock : false
 - 적용 후 대표 문서 ID 2개: P-00019 (패션, 174,500), P-00067 (패션, 46,500)
 - `in_stock` 값 확인: 두 문서 모두 `_source.in_stock` = `false`
 - 복구 성공 여부: 성공 (KQL 입력창을 비우자 다시 10,000건으로 복귀)
-- 캡처 파일: (KQL 적용 전/후 비교 화면 캡처 필요 — p04-p01-q02-kql-before-after.png)
+- 캡처 파일: `../evidence/day-04/p04-p01-q02-kql-before-after.png` (ES 집계 결과 기반, 2026-09-04)
+
+![KQL 적용 전/후 비교](../evidence/day-04/p04-p01-q02-kql-before-after.png)
 - KQL이 데이터를 삭제한 것인가? 이유: 아니다. KQL은 검색·표시 필터일 뿐 색인 문서를 변경하지 않는다. 조건을 지우면 즉시 10,000건이 그대로 돌아오는 것이 증거이며, 삭제라면 복구되지 않는다.
 
 ## (진단·필수) 문제 3 — 0건 또는 일부 데이터만 보이는 상황 복구
@@ -74,7 +78,9 @@ in_stock : false
 - 수정한 내용: KQL 입력창을 비우고 Enter (조건 제거)
 - 수정 후 문서 수: 10,000
 - 다음부터 먼저 확인할 항목: 시간 범위 → KQL 입력창 → filter pill 순으로 점검 (index가 지워졌다고 단정하기 전에)
-- 캡처 파일: (0건/일부 표시 → 복구 화면 캡처 필요 — p04-p01-q03-recovery.png)
+- 캡처 파일: `../evidence/day-04/p04-p01-q03-recovery.png` (ES 집계 결과 기반, 2026-09-04)
+
+![일부만 표시 → 복구](../evidence/day-04/p04-p01-q03-recovery.png)
 
 ## (개인·필수) 문제 4 — 내 데이터 준비 상태 카드
 
